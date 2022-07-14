@@ -1,0 +1,31 @@
+/*  Print Duplicate Elements in Array
+    I/P :- {1,5,4,2,1,4,7}    O/P:- 1 4
+    I/P :- {1,5,4,2,7}        O/P:- -1
+*/
+--------------------------------------------------------------------------
+import java.util.HashSet;
+import java.util.Set;
+class Duplicate 
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,5,4,1,2,4,7};
+        boolean exist = false;
+        
+        Set<Integer> uniqueValues = new HashSet<>();
+        
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(uniqueValues.contains(arr[i]))
+            {
+                exist = true;
+                System.out.print(arr[i]+" ");
+            }
+            else
+                uniqueValues.add(arr[i]);
+        }
+        if(!exist)
+            System.out.println(-1);
+    }
+}
+--------------------------------------------------------------------------
