@@ -47,8 +47,8 @@ class LinkedList
         LinkedList ll = new LinkedList();
         ll.addFirst(4);
         ll.addFirst(5);
-        ll.addFirst(6);
+        ll.addFirst(6);                         
         
-        ll.print();
+        ll.print();                              //  6-->5-->4--> Null
     }
 }
