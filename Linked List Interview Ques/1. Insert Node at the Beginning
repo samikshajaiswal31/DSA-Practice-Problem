@@ -1,0 +1,54 @@
+Q1). Java Program to Insert Node at the Beginning of a Linked List.
+
+Solution :
+
+class LinkedList
+{
+    Node head;
+    public class Node
+    {
+        int data; 
+        Node next;
+        
+        public Node(int data)
+        {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public Node addFirst(int data)
+    {
+        /* If head is not pointing to any node, It means we are creating a first node and head pointer, points to that node.*/
+        
+        if(head == null)
+            head = new Node(data);
+        else {
+            Node temp = new Node(data);         // create a new node
+            temp.next = head;                   // new node points to head
+            head = temp;                        // head points to a new node
+        }
+        return head; 
+    }
+    
+    public void print()
+    {
+        Node temp = head;            /* Traverse a list and check if it not points to null. If it points to null, 
+                                        It means there is no node present after that and we need to end the loop. */
+        while(temp != null)
+        {
+            System.out.print(temp.data +"-->");
+            temp = temp.next;
+        }
+        System.out.print(" Null");
+    }
+    public static void main(String[] args) 
+    {
+        LinkedList ll = new LinkedList();
+        ll.addFirst(4);
+        ll.addFirst(5);
+        ll.addFirst(6);
+        
+        ll.print();
+    }
+}
